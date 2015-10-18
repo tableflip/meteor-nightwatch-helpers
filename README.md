@@ -5,26 +5,32 @@ A series of helper functions for writing Nightwatch tests for Meteor apps.
 
 1. Install starrynight:
 
-```
-npm install -g starrynight
+```sh
+$ npm install -g starrynight
 ```
 
 2. Initialise project for starry night.  From the root directory of the app:
 
-```
-starrynight generate-autoconfig
-starrynight scaffold --framework nightwatch
+```sh
+$ starrynight generate-autoconfig
+$ starrynight scaffold --framework nightwatch
 ```
 
 3. Clone this repo into the `packages` subdirectory from the project root.  You might need to create a `packages` directory.
 
-```
+```sh
 user@host:~/YOUR_PROJECT/packages$ git clone https://github.com/tableflip/meteor-nightwatch-helpers
 ```
 
-4. Add the following line to the `"custom_commands_path"` key in the `.meteor/nightwatch.json` file that will have been created:
+4. Add the package to your project:
 
+```sh
+$ meteor add tableflip:nightwatch-helpers
 ```
+
+5. Add the following line to the `"custom_commands_path"` key in the `.meteor/nightwatch.json` file that will have been created:
+
+```json
 "packages/tests-helpers/nightwatch"
 ```
 
@@ -32,7 +38,7 @@ user@host:~/YOUR_PROJECT/packages$ git clone https://github.com/tableflip/meteor
 
 ### Logging in
 
-```
+```js
 browser.login()
 ```
 
@@ -40,13 +46,13 @@ This will log the test client in with a user ID of *AAAAAAAAAAAAAAAAA* and name 
 
 ### fixtures
 
-```
+```js
 browser.clearDB()
 ```
 
 This method will remove all the contents of the collections which appear in *fixtures* files (see below).
 
-```
+```js
 browser.populateDB()
 ```
 
