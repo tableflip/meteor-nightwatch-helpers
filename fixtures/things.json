@@ -1,0 +1,11 @@
+{
+  "name": "Things",
+  "docs": [
+    {
+      "label": "foo"
+    },
+    {
+      "label": "bar"
+    }
+  ]
+}
